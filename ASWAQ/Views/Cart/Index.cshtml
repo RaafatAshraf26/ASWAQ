@@ -1,0 +1,78 @@
+﻿@model List<Order>
+
+@{
+    ViewData["Title"] = "Cart Page";    
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/CartProducts.css" />
+    <script src="~/js/ChangeCart.js"></script>
+</head>
+
+<body>
+    <div class="AllCartProducts">
+        <h3 class="CartCount">Cart (@Model.Count)</h3>
+        @foreach (var order in Model)
+        {
+            <div class="CartProduct">
+                <a class="ProductLink" asp-controller="Product_Section" asp-action="DetailsOfProduct" asp-route-id="@order.Product.Id">
+                    <img src="data:image/*;base64,@(Convert.ToBase64String(order.Product.Image))" />
+                    <p class="Product-Name">@order?.Product?.Name</p>
+                </a>
+
+                <p class="Price">@order.Product.Price Pounds</p>
+
+                <div class="Date">
+                    <p>@order.OrderDate</p>
+                </div>
+
+                <div>
+                    <a class="btn btn-outline-danger Remove" style="float:inline-start" asp-action="RemoveProduct" asp-controller="Cart" asp-route-CustomerID="@order.CustomerID" asp-route-ProductID="@order.ProductID">Remove</a>
+                </div>
+
+                <div style="padding-top:25px">
+
+                    <div>
+                        <input class="btn btn-secondary plus" type="button" onclick="ChangeCart('@order.ProductID',1)" value="+" />
+                    </div>
+
+                    @{
+                        string ID = @order.ProductID.ToString();
+                    }
+                    <div>
+                        <div class="minus Total" id=@ID>@(order.Total)</div>
+                    </div>
+
+                    <div>
+                        <input class="btn btn-secondary minus" type="button" onclick="ChangeCart('@order.ProductID',-1)" value="-" />
+                    </div>
+
+                </div>
+
+                <div class="Border"></div>
+            </div>
+        }
+    </div>
+
+
+
+    <div class="CheckOut AllCartProducts">
+        <h6 class="Summary">CART SUMMARY</h6>
+
+        <div class="Subtotal">
+            <h6 class="Sub">Subtotal :</h6>
+            <h5 id="TPrice" class="Total-Price">@ViewBag.TotalPrice EGP</h5>
+        </div>
+
+        <div class="checkout">
+            <a asp-action="CheckOut" asp-controller="Cart" class="btn btn-success ">CHECKOUT</a>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+

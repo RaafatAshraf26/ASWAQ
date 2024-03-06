@@ -1,0 +1,51 @@
+﻿@model List<Section>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/FirstPage.css" />
+    </head>
+    
+    <body>
+        <div class="AllSections">
+    
+            <h3>Sections</h3>
+            @foreach (var Sic in Model)
+            {
+                <div class="Sic">
+                    <a asp-action="@nameof(SectionController.Index)" asp-controller="@nameof(SectionController).Replace("Controller","")" asp-route-Name="@Sic.Name">
+                        <img class="section-image" src="data:image/*;base64,@(Convert.ToBase64String(Sic.Image))" />
+                    </a>
+    
+                    <div style="text-align:center">
+                        <a class="btn btn-group SecName" href="">@Sic.Name</a>
+                    </div>
+                </div>
+            }
+        </div>
+    
+    </body>
+</html>
+
+
+
+
+
+@section Footer
+{
+    &copy; 2024 - ASWAQ - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>    
+}
+
+@section Main
+{
+    .MainLayout 
+    {
+    background-image: url(../Images/SuperMarket.jpg);
+    height: 520px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center
+    }
+}

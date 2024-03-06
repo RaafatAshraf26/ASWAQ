@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Admin";
+}
+
+
+
+<div style="width:70%;margin:0 auto">
+    <h1>Admin Page</h1>
+
+    <table class="table table-bordered table-hover table-striped mt-4" >
+        <thead>
+            <tr class="bg-black text-white">
+                <th>Name</th>                
+            </tr>
+        </thead>
+    
+        <tbody style="font-size:17px;">     
+
+            <tr>
+                <td>
+                    <a class="btn btn-group" asp-action="Employees" asp-controller="Admin" style="font-weight:bold">Employees</a>
+                </td>             
+            </tr>     
+
+            <tr>
+                <td>
+                    <a class="btn btn-group" style="font-weight:bold">Roles</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a class="btn btn-group" asp-action="Sections" asp-controller="Admin" style="font-weight:bold">Sections</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<style>
+.MainLayout{
+    background-image:none;
+    height:100px;
+}
+</style>

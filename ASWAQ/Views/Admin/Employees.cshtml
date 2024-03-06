@@ -1,0 +1,39 @@
+﻿@model List<Employee>
+
+<body style="background-color:whitesmoke">
+    
+    <div style="width:80%;margin:0 auto;">        
+        <div class="mt-5" style="background-color:white">            
+            <table class="table table-bordered table-striped table-hover">
+            
+                <tr class="bg-secondary text-white" style="text-align:center">
+                    <th><strong>Name</strong></th>
+                    <th><strong>Salary</strong></th>
+                    <th><strong>Work In</strong></th>
+                </tr>
+            
+                @foreach (var item in Model)
+                {
+                    <tr style="font-size:18px;">
+                        <td>
+                            <a class="btn btn-group" asp-action="EditEmployee" asp-controller="Admin" asp-route-EmpID="@item.Id"> @item.User.UserName </a>
+                        </td>
+                        <td>@item.Salary</td>
+                        <td>
+                            @foreach (var sec in item.EmployeeSections)
+                            {
+                                <span> @sec.Section?.Name | </span>
+                            }
+                        </td>
+                    </tr>
+                }            
+            </table>                    
+        </div>
+
+        <div >
+            <a class="btn btn-outline-dark" asp-action="AddEmployee" asp-controller="Admin">Add Employee</a>
+        </div>
+
+    </div>
+
+</body>

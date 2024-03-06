@@ -1,0 +1,32 @@
+﻿@model Product
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="~/css/DetailsOfProduct.css" />
+</head>
+
+<body>
+
+    <div class="product-container">
+        <img src="data:image/*;base64,@(Convert.ToBase64String(Model.Image))" class="product-image" />
+
+        <div class="product-description">
+            <h3 class="Product-Name">@Model.Name</h3>
+            <h6 class="Product-Price">@Model.Price Pounds</h6>
+
+            <form asp-action="ChangeCartAction" asp-controller="Cart" asp-route-Id="@Model.Id" asp-route-Add=true>
+                <div>
+                    <input class="Product-Total" type="number" placeholder="Total" min="1" name="change" />
+                </div>
+
+                <input class="btn btn-success Product-Add" type="submit" value="Add To Cart" />
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

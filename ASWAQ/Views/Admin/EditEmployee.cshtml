@@ -1,0 +1,71 @@
+﻿@model EditEmployeeViewModel
+
+<body>
+    <form class="EmpForm" method="post">
+
+        <div style="margin-top:100px;border: solid 1px rgb(231, 231, 231);border-radius:20px;background-color:whitesmoke">
+
+            <h3 class="mt-4" style="text-align:center">Add Employee</h3>
+
+            <input hidden asp-for="Id" />
+
+            <div class="text-danger" asp-validation-summary="ModelOnly"> </div>
+
+            <div class="item">
+                <span class="text-danger" asp-validation-for="UserName"></span>
+                <input class="form-control myinput" asp-for="UserName" placeholder="User Name" />
+            </div>
+
+
+            <div class="item">
+                @{
+                    MultiSelectList Sections = new MultiSelectList(ViewBag.Sections, "Id", "Name",Model.SectionsId);
+                }
+
+                <span class="text-danger" asp-validation-for="SectionsId"></span>
+
+                <select class="form-control myinput" asp-for="SectionsId" asp-items="Sections" >
+                    <option class="bg-white" disabled>Works In</option>                                        
+                </select>
+            </div>
+
+            <div class="item">
+                <span class="text-danger" asp-validation-for="Salary"></span>
+                <input class="form-control myinput" asp-for="Salary" placeholder="Salary" min="2000" max="20000" step="any" />
+            </div>            
+
+
+            <div class="item" style="text-align:center">
+                <input class="btn btn-outline-dark myinput" type="submit" value="Save" style="width:50%" />
+            </div>
+
+        </div>
+    </form>
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .EmpForm {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    body {
+        background-color: white
+    }
+
+    .item {
+        width: 60%;
+        margin: 30px auto;
+    }
+
+    .myinput {
+        border-radius: 10px;
+    }
+
+</style>

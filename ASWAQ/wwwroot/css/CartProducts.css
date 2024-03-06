@@ -1,0 +1,149 @@
+﻿.CartCount {
+    border-bottom: solid 1px rgb(231, 231, 231);
+    padding: 20px
+}
+
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius:30px
+}
+.AllCartProducts {
+    margin-top: 100px;
+    background-color: white;
+    width: 70%;
+    border-top: solid 1px rgb(231, 231, 231);
+    margin-left:30px;
+    display:inline-block
+}
+
+.CartProduct {
+    margin: 10px;   
+
+}
+
+body
+{
+    background-color:whitesmoke
+}
+
+.Border {
+    width: 95%;    
+    border-bottom: solid 1px rgb(230, 230, 230);
+    padding:35px;    
+    
+}
+
+.ProductLink {
+    text-decoration: none;
+}
+
+
+.Product-Name
+{    
+    color: black;        
+    font-size: 20px;
+    font-weight: 400
+}
+
+
+.Product-Name, .Date {
+    display: inline-block;
+    font-size: 20px;    
+}
+
+.Product-Name, .Price 
+{
+    margin: 7px;
+    display: inline-block;
+    position: absolute;
+    margin-left:50px;
+}
+.Price 
+{
+    margin-top: 40px;
+    color: red;
+    font-size: 17px
+}
+
+
+.Date {    
+    font-weight: 300;    
+    float: inline-end;
+    letter-spacing: 4px;  
+    padding-bottom:5px;
+        
+}
+
+.plus, .minus {
+    float: right;
+    width: 40px;
+    height: 40px;    
+}
+
+.plus {
+    
+    margin-right: 25px;
+}
+
+
+.minus {
+    margin:0 5px 3px 15px;    
+}
+
+.plus p , .minus p 
+{
+    font-size:20px;
+    font-weight:800;        
+}
+
+.Total {
+    margin-top: 5px;
+    padding-left: 2px
+}
+
+.Remove
+{
+    width:100px;
+    margin:25px 0 0 25px;
+
+}
+
+.CheckOut {
+    position: absolute;
+    display: inline-block;
+    width: 18%;    
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(0,0,0,.5);
+}
+
+.Subtotal, .Summary {
+    border-bottom: solid 1px rgb(231, 231, 231);
+}
+
+.CheckOut h6 {
+    padding: 10px;
+    text-align: center
+}
+
+.Sub {
+    display: inline-block;
+}
+
+.Total-Price {
+    display: inline-block;
+    float: inline-end;
+    color: red;
+    margin: 8px
+}
+
+.checkout {
+    margin-top: 15px;
+    text-align: center
+}
+
+.checkout a {
+    width: 94%;
+    border-radius: 10px;    
+}

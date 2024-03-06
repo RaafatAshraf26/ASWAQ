@@ -1,0 +1,45 @@
+﻿@model Section
+
+@{
+    ViewData["Title"] = "Admin Section-Page";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/FirstPage.css" />
+</head>
+
+<body class="bg-whiteSmoke">
+
+    <div class="sections">
+
+        <div class="background">
+
+            @foreach (var product in Model.Products)
+            {
+                <div class="Sic" style="margin-left:70px">
+                    <a asp-action="Section" asp-controller="Admin">
+                        <img class="section-image" src="data:image/*;base64,@(Convert.ToBase64String(product.Image))" />
+                    </a>
+
+                    <div style="text-align:center">
+                        <a class="btn btn-group SecName" href="">@product.Name</a>
+                    </div>
+
+                    <div style="text-align:center">
+                        <a class="btn btn-danger SecName" asp-action="RemoveSection" asp-controller="Admin" asp-route-sectionId="@product.Id">Remove</a>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+        <div class="mt-5">
+            <a class="btn btn-success" asp-action="AddProduct" asp-controller="Admin" asp-route-SectionID="@Model.Id">Add Product</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿@inject ICustomerRepository customerRepository
+@inject UserManager<ApplicationUser> userManager
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <li class="nav-item">
+        <div>
+            <a class="btn btnbtn-group" asp-action="Index" asp-controller="Cart">
+                <img class="Cart" src="~/images/cart.jpg" />
+                <label style="color:red;">@await customerRepository.GetOrdersCount(userManager.GetUserId(User))</label>
+            </a>
+        </div>
+    </li>
+}

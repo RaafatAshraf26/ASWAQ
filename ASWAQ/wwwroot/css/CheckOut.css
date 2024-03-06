@@ -1,0 +1,54 @@
+﻿
+.item{
+    margin-top:30px;
+}
+.phone
+{
+    color:red;
+    font-size:24px;
+    font-weight:500;
+    width:70%;
+    border-radius:15px;
+}
+
+.checkout {
+    margin: 100px;
+}
+
+.data {
+    display: inline-block;
+    position: absolute;
+    margin-left: 100px;
+}
+
+.checkoutsubmt {
+    text-align: center;
+    margin-top: 50px;
+    width: 70%
+}
+
+.Save {
+    margin-left: 10px;
+    height: 50px;
+    margin-bottom: 10px;
+    width: 100px
+}
+
+.checkoutsubmt a
+{
+    width:150px;        
+    border-radius:10px;
+    font-size:19px;
+}
+
+.success-message {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;    
+    left: 50%;    
+    border-radius: 5px;
+    z-index: 9999;
+    height:50px;
+}

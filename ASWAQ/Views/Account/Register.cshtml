@@ -1,0 +1,93 @@
+﻿ @model ASWAQ.ViewModels.RegisterViewModel
+
+ @{
+     ViewData["Title"] = "Register";
+ }
+
+ <html>
+ <head>
+     <link rel="stylesheet" href="/css/SignUP.css" asp-append-version="true" />
+ </head>
+
+ <body>
+     <form class="SignForm" asp-controller="@nameof(AccountController).Replace("Controller","")" asp-action="@nameof(AccountController.Register)" method="post" >
+         <h1>SIGN UP</h1>
+
+         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+         <div>
+             <span class="text-danger NameInput error" asp-validation-for="FirstName" style="margin-top:30px"></span>
+             <span class="text-danger NameInput error" asp-validation-for="LastName" style="margin-top:30px"></span>
+         </div>
+
+         <input class="form-control NameInput" asp-for="FirstName" placeholder="First Name" />
+         <input class="form-control NameInput" asp-for="LastName" placeholder="Last Name" />
+
+
+         <div class="Norm-Input-Div">
+             <span class="text-danger error " asp-validation-for="UserName"></span>
+             <input class="form-control NormInput" asp-for="UserName" placeholder="User Name" />
+         </div>
+
+         <div class="Norm-Input-Div">
+             <span class="text-danger error " asp-validation-for="Email"></span>
+             <input class="form-control NormInput" type="email" asp-for="Email" placeholder="Email" />
+         </div>
+
+         <div class="Norm-Input-Div">
+             <span class="text-danger error" asp-validation-for="PhoneNumber"></span>
+             <input class="form-control NormInput" asp-for="PhoneNumber" placeholder="Phone Number" />
+         </div>
+        
+
+         <div class="Norm-Input-Div">
+             <span class="text-danger error " asp-validation-for="Password"></span>
+             <input class="form-control NormInput" asp-for="Password" type="password" placeholder="Password" />
+         </div>
+
+         <div class="Norm-Input-Div">
+             <span class="text-danger error " asp-validation-for="ConfirmPassword"></span>
+             <input class="form-control NormInput" asp-for="ConfirmPassword" placeholder="Confirm Password" />
+         </div>
+                 
+
+         <div class="Norm-Input-Div" >
+             <label class="form-check-label">
+                 <input class="form-check-input" asp-for="RememberMe" /> 
+                 <label asp-for="RememberMe"></label>
+             </label>
+         </div>  
+
+         <div class="sub">
+             <input class="btn btn-success sub" type="submit" value="Sign Up" />
+         </div>
+
+     </form>
+ </body>
+ </html>
+
+
+ @section Scripts {
+     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+ }
+
+
+ <script>
+     document.addEventListener("DOMContentLoaded", function () {
+         var passwordInput = document.getElementById("password-input");
+         var showPasswordToggle = document.getElementById("show-password-toggle");
+         var eyeIcon = document.getElementById("eye-icon");
+
+         showPasswordToggle.addEventListener("click", function () {
+             if (passwordInput.type === "password") {
+                 passwordInput.type = "text";
+                 eyeIcon.classList.remove("fa-eye");
+                 eyeIcon.classList.add("fa-eye-slash");
+             } else {
+                 passwordInput.type = "password";
+                 eyeIcon.classList.remove("fa-eye-slash");
+                 eyeIcon.classList.add("fa-eye");
+             }
+         });
+     });
+ </script>

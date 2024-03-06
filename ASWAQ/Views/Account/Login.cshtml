@@ -1,0 +1,55 @@
+﻿@model ASWAQ.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/SignUP.css" asp-append-version="true" />
+    </head>
+    
+    <body>
+        <form class="SignForm" asp-controller="@nameof(AccountController).Replace("Controller","")" asp-action="@nameof(AccountController.Login)">
+    
+            <h1>LOGIN</h1>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>                
+    
+            <div class="Norm-Input-Div">
+                <span class="text-danger error " asp-validation-for="UserName"></span>
+                <input class="form-control NormInput" asp-for="UserName" placeholder="User Name" />
+            </div>
+    
+            <div class="Norm-Input-Div">
+                <span class="text-danger error " asp-validation-for="Password"></span>
+                <input class="form-control NormInput" asp-for="Password" type="password" placeholder="Password" />
+            </div>
+
+            <div class="Norm-Input-Div">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RememberMe" /> 
+                    <label asp-for="RememberMe"></label>
+                </label>
+            </div>
+
+            <div class="sub">
+                <input class="btn btn-success" type="submit" value="LOGIN" />
+    
+            </div>
+    
+        </form>    
+
+    </body>
+</html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<style>
+    .form-group
+    {
+        margin:20px;
+    }
+</style>

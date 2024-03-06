@@ -1,0 +1,31 @@
+﻿@model Customer
+
+<link rel="stylesheet" href="~/css/CheckOut.css" />
+
+<div class="success-message" id="successMessage">Success</div>
+
+<div class="checkout">   
+   <img src="~/Images/Success.png" />   
+
+   <div class="data">
+
+        <div class="success-message" id="successMessage">
+            Success! Your action was completed.
+        </div>
+
+
+        <h1>Subtotal : <span style="color:red">@ViewBag.TotalPrice</span> </h1>
+        <h2 class="item">We will contact you on this number</h2>
+
+        <form asp-action="EditNumber" asp-controller="Account">
+            <input class="item form-control phone" asp-for="User.PhoneNumber" minlength="11" maxlength="11" style="display:inline-block" />
+
+            <input class="btn btn-outline-success Save" type="submit" value="Save" />
+        </form>
+
+        <div class="checkoutsubmt">
+            <a class="btn btn-success item" id="myAnchor" asp-action="FinalCheckOut">Check Out</a>            
+        </div>
+   </div>
+    
+</div>

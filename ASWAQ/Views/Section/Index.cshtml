@@ -1,0 +1,44 @@
+﻿@model Section
+
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/FirstPage.css" />
+    </head>
+
+    <body>
+        <div class="AllSections">
+    
+            <h3>@Model.Name Sections</h3>
+            @foreach (var product in Model.Products ?? new List<Product>())
+            {
+                <div class="Sic" style="text-align:center">
+                    <a style="text-decoration:none;" asp-action="@nameof(SectionController.Product)" asp-controller="@nameof(SectionController).Replace("Controller","")" asp-route-Name="@product.Name">
+                    
+                        <img class="product-image" src="data:image/*;base64,@(Convert.ToBase64String(product.Image))" />
+    
+                        <p class="ProdDetail">@product.Name</p>
+    
+                        <h6 class="Price">@product.Price pounds</h6>
+                    </a>
+    
+                    <div style="text-align:center">
+                        <a class="btn btn-success AddBtn" asp-action="ChangeCartAction" asp-controller="Cart" asp-route-Id="@product.Id" asp-route-Add=true>Add To Cart</a>
+                    </div>
+    
+                </div>
+            }
+        </div>
+    </body>
+</html>
+
+@section Main                      
+{
+    .MainLayout
+    {
+    background-image: url(../Images/SuperMarket.jpg);
+    height: 520px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center
+    }
+}

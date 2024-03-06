@@ -1,0 +1,90 @@
+﻿
+.SignForm {
+    margin: 130px auto 30px auto;
+    width: 60%;    
+    background-color: rgba(255, 255, 255,.3);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'HoloLens MDL2 Assets';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.NameInput {
+    margin-left:4%;
+    width: 43%;
+    display: inline-block;    
+}
+
+
+.Norm-Input-Div {
+    margin-top: 35px;
+    margin-left: 31px
+}
+
+.NormInput {    
+    width: 95.2%;
+}
+
+
+.BirthInputError {
+    display: block;
+    margin-top: 30px;
+    margin-left: 38px
+}
+.BirthInput {
+    width: 30%;
+    display: inline;    
+}
+
+.Birth-Input-Div {
+    display: inline;
+}
+
+
+body {
+    background-image: url(../Images/SignUP.png);
+    background-size: cover;
+    padding-bottom: 50px;
+}
+
+
+label {
+    font-size: 20px;
+    font-weight: 400;    
+}
+
+.sub {
+        
+    text-align: center;
+}
+
+.sub input
+{
+    margin:20px;
+}
+
+.BirthInput, .NameInput, .NormInput {
+    border-radius: 10px
+}
+
+.error
+{
+    font-weight:500 ;    
+}
+
+.NValid
+{
+    color:red;
+    margin:35px;
+}
+
+.boorder {
+    border-top:none;
+}

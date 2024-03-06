@@ -1,0 +1,44 @@
+﻿body 
+{
+    background-color:whitesmoke;
+}
+
+.Profile {    
+    margin-top:100px; 
+    margin-left: 30px;    
+}
+
+.details 
+{
+    background-color: white;
+    border: solid 1px rgb(231, 231, 231);
+    border-radius:10px;    
+    width: 60%;        
+}
+
+.PDetails {
+    margin: 20px
+}
+
+.head
+{
+    font-weight:bold
+}
+.edit {
+    position: relative;
+    float: right;
+    width: 130px
+}
+
+.group {
+    border-bottom: solid 1px rgb(231, 231, 231);
+    padding: 30px
+}
+
+.Res {
+    margin-top: 16px;
+    width: 300px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right:20px
+}

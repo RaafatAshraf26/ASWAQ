@@ -1,0 +1,78 @@
+﻿@model ProfileViewModel
+ 
+<link rel="stylesheet" href="~/css/Profile.css" />
+
+
+<form asp-action="Profile" asp-controller="Account" >
+    <div class="Profile" >
+        <h2 class=" PDetails">Profile Details</h2>
+        <div class="details">        
+            <div class="group">
+                <div>
+                    <label class="head" asp-for="UserName"></label>                        
+                </div>
+                <div >
+                    <input class="form-control Res" asp-for="UserName" />
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                </div>
+            </div>                
+
+            <div class="group">
+                <div>
+                    <label class="head" asp-for="FirstName"></label>
+                </div>
+                <div>
+                    <input class="form-control Res" asp-for="FirstName" />
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+
+            <div class="group">
+                <div>
+                    <label class="head" asp-for="LastName"></label>
+                </div>
+                <div>
+                    <input class="form-control Res" asp-for="LastName" />
+                    <span class="text-danger" asp-validation-for="LastName"></span>
+                </div>
+            </div>
+
+            <div class="group">
+                <div>
+                    <label class="head" asp-for="Email"></label>
+                </div>
+                <div>
+                    <input class="form-control Res" asp-for="Email" />
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+            </div>            
+
+            <div class="group">
+                <div>
+                    <label class="head" asp-for="PhoneNumber"></label>
+                </div>
+                <div>
+                    <input class="form-control Res" asp-for="PhoneNumber" />
+                    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                </div>
+            </div>            
+
+            <div class="group">
+                <div>
+                    <a class="head" asp-action="ResetPassword" asp-controller="Account" >Reset Password</a>
+                </div>                
+            </div>
+            
+            
+            <div style="text-align:center;padding:20px">
+                <input class="btn btn-outline-success" type="submit" style="width:200px" value="Save" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

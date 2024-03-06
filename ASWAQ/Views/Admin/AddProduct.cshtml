@@ -1,0 +1,75 @@
+﻿@model AddProductViewModel
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+<form asp-action="AddProduct" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <div class="col-md-12" style="margin-top:100px">
+
+        <div class="row">
+
+            <div class="col-md-5" >
+                <div class="row">                
+
+                    <input asp-for="SectionID" hidden value="@ViewBag.SectionID" />
+
+                    <div class="col-md-15" style="margin:0px 50px 0px 50px">
+                        <input class="form-control" asp-for="Name" placeholder="Product Name" style="width:60%;" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="col-md-15" style="margin:50px 50px 0px 50px">
+                        <input class="form-control" asp-for="Description" placeholder="Description" style="width:60%;" />
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+
+                    <div class="col-md-15" style="margin:50px 50px 0px 50px">
+                        <input class="form-control" asp-for="Price" placeholder="Price" style="width:60%;" />
+                        <span class="text-danger" asp-validation-for="Price"></span>
+                    </div>
+
+                </div>            
+            </div>
+    
+            <div class="col-md-6">
+
+                <img class="col-md-4" id="imgViewer" width="200" height="220" style="border:1px solid #000000;border-radius:10px;" />
+    
+                <div class="mt-4">
+                    <div class="col-md-4" >
+                        <div class="form-group" >                            
+                            <input class="form-control" asp-for="Image" id="txtFile" type="file" accept="image/*">
+                            <span class="text-danger" asp-validation-for="Image"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">               
+                <input class="btn btn-success mt-5" type="submit" value="Add" style="width:20%;margin-top:10px;margin-left:200px" />
+            </div>   
+        </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<script type="text/javascript">
+    $(document).ready(function () 
+    {
+        $("#txtFile").change(function () 
+        {
+            var files = event.target.files;
+            $("#imgViewer").attr("src", window.URL.createObjectURL(files[0]));
+        });                
+    });
+</script>

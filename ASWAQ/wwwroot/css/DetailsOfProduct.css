@@ -1,0 +1,45 @@
+﻿.product-container 
+{
+    margin:100px 30px 0 50px;
+    display: flex;           
+}
+
+.product-image
+{
+    height: 400px;
+    width: 400px;
+    margin-right: 20px; 
+    border-radius:50px;
+    
+}
+
+.Product-Price 
+{ 
+    letter-spacing: 2px;
+    color:red;    
+}
+
+.Product-Name, .Product-Price,.Product-Total
+{    
+    margin-bottom: 25px;
+}
+
+.Product-Total 
+{        
+    border-radius:30px;
+    text-align: center;    
+}
+
+.product-description 
+{
+    
+    margin-left: 200px;
+    letter-spacing: 3px;    
+    text-align:center   
+}
+
+.Product-Add {
+    width: 300px;    
+    border-radius: 30px;
+}
+
